@@ -1,0 +1,28 @@
+🐠 AquaLife – Premium Aquarium Store
+
+A beautiful and interactive e-commerce web app that brings the aquatic hobby to your browser. Users can explore premium fish, aquariums, and decor, manage a live shopping cart, and complete a simulated secure checkout process.
+
+AquaLife is built entirely with front-end technologies, offering a seamless and modern shopping experience for both beginners and expert aquascapers.
+
+🧠 What is AquaLife?
+
+AquaLife is a complete front-end storefront simulation designed for the aquarium enthusiast.
+
+Instead of relying on a complex backend database, the application cleverly utilizes the browser's localStorage to handle user sessions and shopping cart data. The shopping flow works by:
+
+Browsing: Filtering top-selling products like the Platinum Butterfly Koi and Symphysodon Discus.
+
+Cart Management: Adding items to a dynamic cart that groups duplicates, tracks quantities, and instantly calculates pricing totals.
+
+Authentication: Requiring users to create an account or log in via a sliding drawer before they are allowed to purchase.
+
+Checkout: Reviewing a final order summary and submitting a simulated secure payment form.
+
+📌 Features
+
+✨ Shop premium aquatic life and gear directly in the browser
+✨ Dynamic shopping cart with real-time add/remove controls
+✨ Built-in client-side user authentication (Login, Sign up, Logout)
+✨ Interactive pop-up modals for product galleries, blogs, and videos
+✨ Smooth sliding overlay drawer for a secure checkout experience
+✨ Clean, fully responsive, and mobile-friendly UI
