@@ -1,5 +1,3 @@
-// JS/login.js - Handles Switching Views & Sign In Logic
-
 document.addEventListener("DOMContentLoaded", () => {
   const authOverlay = document.getElementById("auth-overlay");
   const loginView = document.getElementById("login-view");
@@ -31,10 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
     loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      // SAVE THE LOGGED IN STATE
       localStorage.setItem("isLoggedIn", "true");
       const authBtn = document.getElementById("auth-btn");
-      if (authBtn) authBtn.innerText = "Logout"; // Change text to Logout
+      if (authBtn) authBtn.innerText = "Logout";
 
       alert("Logged in successfully! Welcome back.");
       authOverlay.style.display = "none";

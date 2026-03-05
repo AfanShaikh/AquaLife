@@ -1,5 +1,3 @@
-// cart.js - Handles all Shopping Cart Logic
-
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize cart from LocalStorage
   let cart = JSON.parse(localStorage.getItem("aquaCart")) || [];
@@ -25,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const checkoutSummaryList = document.getElementById("checkout-summary-list");
   const checkoutFinalTotal = document.getElementById("checkout-final-total");
 
-  // 1. Update Cart Badge
+  // 1.Cart Badge
   function updateCartCount() {
     if (cartCountEl) {
       cartCountEl.textContent = cart.length;
@@ -92,19 +90,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Group items by ID and count their quantities
     const itemCounts = {};
     cart.forEach((id) => {
       itemCounts[id] = (itemCounts[id] || 0) + 1;
     });
 
-    // Render each unique item group
     Object.keys(itemCounts).forEach((cartId) => {
       const quantity = itemCounts[cartId];
       const product = window.products.find((p) => p.id == cartId);
 
       if (product) {
-        // Calculate total for this specific group (Price x Quantity)
         const itemTotal = product.price * quantity;
         total += itemTotal;
 
@@ -116,7 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
         li.style.borderBottom = "1px solid #e0e0e0";
         li.style.color = "#333";
 
-        // NEW: Added both minus AND plus buttons wrapped in a small div
         li.innerHTML = `
                     <div style="display: flex; align-items: center; gap: 15px;">
                         <div style="display: flex; gap: 8px;">
@@ -173,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 8. UPDATED: Checkout Button Logic (Opens Checkout Drawer)
+  // 8.Checkout Button Logic
   if (checkoutBtn) {
     checkoutBtn.addEventListener("click", () => {
       if (cart.length === 0) {
@@ -184,10 +178,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
       if (isLoggedIn) {
-        // User IS logged in: Open the Checkout Drawer
-        cartModal.style.display = "none"; // Close Cart
+        cartModal.style.display = "none";
 
-        // 1. Generate Order Summary
         if (checkoutSummaryList && checkoutFinalTotal) {
           checkoutSummaryList.innerHTML = "";
           let finalTotal = 0;
@@ -216,10 +208,8 @@ document.addEventListener("DOMContentLoaded", () => {
           checkoutFinalTotal.textContent = finalTotal.toFixed(2);
         }
 
-        // 2. Show the Drawer
         if (checkoutOverlay) checkoutOverlay.style.display = "flex";
       } else {
-        // User is NOT logged in: Open Login Drawer
         alert("Please log in or create an account to proceed to checkout.");
         cartModal.style.display = "none";
 

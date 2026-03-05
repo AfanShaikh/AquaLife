@@ -193,7 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (playBtn) {
     playBtn.addEventListener("click", () => {
       videoModal.style.display = "flex";
-      // Updated the src link to your new 5-hour aquarium video
       iframe.src = "https://www.youtube.com/embed/6lZ3CookYNg?autoplay=1";
     });
   }
@@ -261,35 +260,30 @@ document.addEventListener("DOMContentLoaded", () => {
   if (readMoreBtns.length > 0) {
     readMoreBtns.forEach((btn) => {
       btn.addEventListener("click", (e) => {
-        e.preventDefault(); // Stop the page from jumping to the top
+        e.preventDefault();
 
         // Find the specific blog card we just clicked inside of
         const article = e.target.closest(".blog-card");
 
-        // Grab the image, title, and date directly from that card
         const imgSrc = article.querySelector("img").src;
         const title = article.querySelector("h3").innerText;
         const date = article.querySelector("small").innerText;
 
-        // Inject those details into our hidden modal
         modalImg.src = imgSrc;
         modalTitle.innerText = title;
         modalDate.innerText = date;
 
-        // Make the modal visible!
         blogModal.style.display = "flex";
       });
     });
   }
 
-  // 2. Close the modal when the X is clicked
   if (closeBlogBtn) {
     closeBlogBtn.addEventListener("click", () => {
       blogModal.style.display = "none";
     });
   }
 
-  // 3. Close the modal if the user clicks the dark background outside the box
   window.addEventListener("click", (e) => {
     if (e.target === blogModal) {
       blogModal.style.display = "none";

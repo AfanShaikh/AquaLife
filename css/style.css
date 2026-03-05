@@ -1,4 +1,3 @@
-/* --- Reset & Base --- */
 * {
   margin: 0;
   padding: 0;
@@ -127,7 +126,7 @@ header.scrolled {
   transition: all 0.3s ease-in-out;
   display: flex; /* ALIGNMENT FIX */
   align-items: center; /* ALIGNMENT FIX */
-  line-height: 1; /* ALIGNMENT FIX */
+  line-height: 1;
 }
 
 .nav-links a:hover {
@@ -622,7 +621,6 @@ footer {
   overflow-y: auto;
 }
 
-/* UPDATED MODAL CLOSE BUTTON */
 .close-modal,
 .close-lightbox {
   position: absolute;
@@ -720,7 +718,6 @@ footer {
   transform: translateY(0);
 }
 
-/* --- Responsive Design --- */
 @media (max-width: 768px) {
   .nav-links {
     position: fixed;
@@ -765,7 +762,6 @@ footer {
   }
 }
 
-/* login overlay method */
 /* --- Auth Button & Overlay Drawer --- */
 .btn-auth {
   background-color: #ff6b35;
@@ -777,10 +773,10 @@ footer {
   cursor: pointer;
   font-size: 1rem;
   transition: all 0.2s ease;
-  margin-left: 0; /* ALIGNMENT FIX */
-  display: inline-flex; /* ALIGNMENT FIX */
-  align-items: center; /* ALIGNMENT FIX */
-  line-height: 1; /* ALIGNMENT FIX */
+  margin-left: 0;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
 }
 
 .btn-auth:hover {
@@ -797,7 +793,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 4000;
   display: none;
-  justify-content: flex-end; /* Aligns drawer to the right */
+  justify-content: flex-end;
 }
 
 .auth-panel {
