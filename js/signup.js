@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const authOverlay = document.getElementById("auth-overlay");
-  const authBtn = document.getElementById("auth-btn"); // The button in your navbar
+  const authBtn = document.getElementById("auth-btn"); 
   const closeAuthBtn = document.getElementById("close-auth-btn");
   const loginView = document.getElementById("login-view");
   const signupView = document.getElementById("signup-view");
